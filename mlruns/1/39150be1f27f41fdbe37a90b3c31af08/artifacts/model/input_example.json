@@ -1,0 +1,1 @@
+{"columns": ["MSSubClass", "LotFrontage", "LotArea", "LotShape", "LandContour", "Condition1", "OverallQual", "ExterQual", "ExterCond", "Foundation"], "data": [[20, 70.0, 8400, "Reg", "Lvl", "Norm", 5, "TA", "Gd", "CBlock"]]}

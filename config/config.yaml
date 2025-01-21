@@ -1,0 +1,58 @@
+# Data configuration
+artifacts: "artifacts"
+data_path: "artifacts/train.csv"
+preprocessing_path: "models/preprocessing"
+
+# MLFlow configuration
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "house_price_experiment"
+  artifact_path: "model"
+
+# Model hyperparameters
+model_params:
+  RandomForestRegressor:
+    model__n_estimators: [3, 5, 7]
+    model__max_depth: [2, 3, 4]
+    model__min_samples_split: [2, 5]
+    model__min_samples_leaf: [1, 2]
+
+  SVR:
+    model__C: [0.1, 1]
+    model__kernel: ['linear', 'rbf']
+    model__gamma: ['scale', 'auto']
+
+# Hyperparameters
+RANDOM_STATE: 42
+TEST_SIZE: 0.2
+
+# Preprocessing configuration
+categorical_features:
+  - 'MSSubClass'
+  - 'LotShape'
+  - 'LandContour'
+  - 'Condition1'
+  - 'ExterQual'
+  - 'ExterCond'
+  - 'Foundation'
+
+numerical_features:
+ - 'LotFrontage'
+ - 'LotArea'
+ - 'OverallQual'
+
+columns_to_drop:
+  - 'PoolQC'
+  - 'MiscFeature'
+  - 'Alley'
+  - 'Fence'
+  - 'MasVnrType'
+  - 'FireplaceQu'
+  - 'Id'
+# API configuration
+api:
+  title: "House Price Prediction API"
+  description: "API for predicting house price"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 8000

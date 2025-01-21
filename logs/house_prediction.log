@@ -1,0 +1,54 @@
+2025-01-20 05:38:16 | house_prediction | INFO | Loading configuration from config\config.yaml
+2025-01-20 05:38:16 | house_prediction | INFO | Configuration loaded successfully
+2025-01-20 05:38:20 | house_prediction | INFO | Initializing DataLoader...
+2025-01-20 05:38:20 | house_prediction | INFO | Initialized DataLoader with Path: artifacts/train.csv
+2025-01-20 05:38:20 | house_prediction | INFO | Loading data from artifacts/train.csv
+2025-01-20 05:38:20 | house_prediction | INFO | The data was loaded successfully with shape (1460, 81)
+2025-01-20 05:38:20 | house_prediction | INFO | Validating data...
+2025-01-20 05:38:20 | house_prediction | WARNING | Found null values:
+LotFrontage      259
+Alley           1369
+MasVnrType       872
+MasVnrArea         8
+BsmtQual          37
+BsmtCond          37
+BsmtExposure      38
+BsmtFinType1      37
+BsmtFinType2      38
+Electrical         1
+FireplaceQu      690
+GarageType        81
+GarageYrBlt       81
+GarageFinish      81
+GarageQual        81
+GarageCond        81
+PoolQC          1453
+Fence           1179
+MiscFeature     1406
+dtype: int64
+2025-01-20 05:38:20 | house_prediction | INFO | Data validation completed
+2025-01-20 05:38:20 | house_prediction | INFO | Initializing DataProcessor...
+2025-01-20 05:38:20 | house_prediction | INFO | DataProcessor initialized.
+2025-01-20 05:38:20 | house_prediction | INFO | Starting data processing...
+2025-01-20 05:38:20 | house_prediction | INFO | Dropping some columns
+2025-01-20 05:38:20 | house_prediction | INFO | Splitting our dataset into X and y
+2025-01-20 05:38:20 | house_prediction | INFO | Creating a processor pipeline
+2025-01-20 05:38:20 | house_prediction | INFO | Data processing completed.
+2025-01-20 05:38:20 | house_prediction | INFO | Initializing ModelTrainer...
+2025-01-20 05:38:20 | house_prediction | INFO | ModelBuilder initialized.
+2025-01-20 05:38:20 | house_prediction | INFO | Models and hyperparameters loaded from config.
+2025-01-20 05:38:21 | house_prediction | INFO | MLflow setup completed.
+2025-01-20 05:38:21 | house_prediction | INFO | ModelTrainer initialized.
+2025-01-20 05:38:21 | house_prediction | INFO | Starting training and evaluation...
+2025-01-20 05:38:21 | house_prediction | INFO | Splitting data into train and test sets...
+2025-01-20 05:38:21 | house_prediction | INFO | Training model: RandomForestRegressor
+2025-01-20 05:39:29 | house_prediction | INFO | Model: RandomForestRegressor - RMSE: 34645.3269, R²: 0.8435, MAE: 23180.0064
+2025-01-20 05:40:11 | house_prediction | INFO | Selected features for RandomForestRegressor: ['MSSubClass' 'LotFrontage' 'LotArea' 'LotShape' 'LandContour'
+ 'Condition1' 'OverallQual' 'ExterQual' 'ExterCond' 'Foundation']
+2025-01-20 05:40:11 | house_prediction | INFO | New best model: RandomForestRegressor with RMSE: 34645.3269
+2025-01-20 05:40:19 | house_prediction | INFO | Training model: SVR
+2025-01-20 05:40:56 | house_prediction | INFO | Model: SVR - RMSE: 85502.0304, R²: 0.0469, MAE: 56615.2743
+2025-01-20 05:41:34 | house_prediction | INFO | Selected features for SVR: ['MSSubClass' 'LotFrontage' 'LotArea' 'LotShape' 'LandContour'
+ 'Condition1' 'OverallQual' 'ExterQual' 'ExterCond' 'Foundation']
+2025-01-20 05:41:38 | house_prediction | INFO | Best model saved to disk.
+2025-01-20 05:41:38 | house_prediction | INFO | Pipeline run completed successfully.
